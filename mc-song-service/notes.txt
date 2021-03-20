@@ -1,0 +1,5 @@
+MongoDB
+
+use releaseCatalogDB
+
+collection artistCollection
