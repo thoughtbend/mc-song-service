@@ -8,11 +8,14 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,7 +40,8 @@ public class ArtistController {
 	@ResponseBody
 	public List<ArtistResource> findArtists() {
 		
-		List<Artist> artistDataList = this.artistRepository.findAll();
+		List<Artist> artistDataList = this.artistRepository.findAll(Sort.by(Sort.Direction.ASC, "name"));
+		
 		List<ArtistResource> artistResourceList = artistDataList.stream()
 				.map(source -> {
 					final ArtistResource target = new ArtistResource();
@@ -52,5 +56,19 @@ public class ArtistController {
 		}
 		
 		return artistResourceList;
+	}
+	
+	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public String saveNewArtist(@RequestBody ArtistResource resource) {
+		
+		Artist data = new Artist();
+		
+		data.setId(Long.valueOf(resource.getId()));
+		data.setName(resource.getName());
+		
+		final Artist postSaveData = this.artistRepository.save(data);
+		
+		return "Saved with key - " + postSaveData.getDbId();
 	}
 }
