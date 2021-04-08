@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mc-song-service-nonprod-deployment
+  labels: 
+    app: mc-song-service-nonprod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mc-song-service-nonprod
+  template:
+    metadata:
+      labels:
+        app: mc-song-service-nonprod
+    spec:
+      containers:
+      - name: mc-song-service-nonprod-pod
+        image: mnolan98/mc-song-service:0.0.3
+#        imagePullPolicy: IfNotPresent
+        
+        ports:
+        - containerPort: 8080
+        
+        
+#        livenessProbe: 
+#          httpGet:
+#            port: 8080
+#            path: /api/mc-song-service-health
+#          periodSeconds: 5
+#          timeoutSeconds: 2
+#          failureThreshold: 3
+#          initialDelaySeconds: 5
+
+        env:
+        - name: "spring.data.mongodb.uri"
+#          value: "mongodb://mc-artist-svc-user:P4ssW0rd@mc-mongodb-dev-0.mc-mongodb-dev-svc.default.svc.cluster.local:27017,mc-mongodb-dev-1.mc-mongodb-dev-svc.default.svc.cluster.local:27017,mc-mongodb-dev-2.mc-mongodb-dev-svc.default.svc.cluster.local:27017/releaseCatalogDB?authSource=admin&replicaSet=mc-mongodb-dev"
+          valueFrom:
+            secretKeyRef:
+              name: "sc-release-catalog-db-mongodb-uri"
+              key: "uri"
+        - name: "spring.data.mongodb.authentication-database"
+          value: "admin"
+        - name: "logging.level.org.mongodb"
+          value: "trace"

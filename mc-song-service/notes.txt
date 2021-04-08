@@ -3,3 +3,17 @@ MongoDB
 use releaseCatalogDB
 
 collection artistCollection
+
+
+-- Docker Build
+docker build -t mnolan98/mc-song-service .
+docker run -p 8080:8080 -e spring.data.mongodb.host=host.docker.internal -e spring.data.mongodb.port=27017 -d mnolan98/mc-song-service
+
+docker tag mnolan98/mc-song-service:latest mnolan98/mc-song-service:0.0.3
+docker push mnolan98/mc-song-service:latest
+
+kubectl apply -f k8s/deployment.yml
+kubectl apply -f k8s/service.yml
+
+
+https://stackoverflow.com/questions/62539604/how-to-access-nodeport-in-minikube-with-docker-driver
