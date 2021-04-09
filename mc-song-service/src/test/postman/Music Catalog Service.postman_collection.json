@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "9c4f0168-3a04-4e59-9e60-25040fdd7293",
+		"name": "Music Catalog Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Artists",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVWckw5SEVadXU3MHc1dUx6RDBKUiJ9.eyJpc3MiOiJodHRwczovL3Rob3VnaHRiZW5kLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJINXQ0elBuT2t6bk01enoyWlNRWEpSWmNVMlZXQnlQdEBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9tYy1hcnRpc3Qtc2VydmljZS50aG91Z2h0YmVuZC5jb20vIiwiaWF0IjoxNjE3NDIwNDA2LCJleHAiOjE2MTc1MDY4MDYsImF6cCI6Ikg1dDR6UG5Pa3puTTV6ejJaU1FYSlJaY1UyVldCeVB0Iiwic2NvcGUiOiJyZWFkOmFydGlzdHMiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMiLCJwZXJtaXNzaW9ucyI6WyJyZWFkOmFydGlzdHMiXX0.tIchHxj7NdOrfRbcJYhTaZvcuZby5mSOitaw5OFrZfr4qP4cVeDjMAJyO6VrOh_otn2rF5rjLmV5VrJmlIEq-2UUTGlDYGLsiUJHP4mxHjgt2TmnO0BnrRqFxxyVk2e6WnpfyRqWpmeDNh9HjfdfZ08S9Sv2kov-GG0taFdV6WG88T3M-V6TkCJaWSFuRAaIJNf6C6we2SG4Qamjci2PEVgs-p1-CXt63pkZDwCCeDIwnGz4TENR3jBizGVOJPXoy-LmWeoEKPiUam9Jbtw9oCWucFV8pKrZMN2H0I2hFYxe-GQwMbc0L3m9SqFMU11xKFFJZjCxPPmE7dnz6sPwOw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}/artist",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"artist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Artists By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVWckw5SEVadXU3MHc1dUx6RDBKUiJ9.eyJpc3MiOiJodHRwczovL3Rob3VnaHRiZW5kLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJINXQ0elBuT2t6bk01enoyWlNRWEpSWmNVMlZXQnlQdEBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9tYy1hcnRpc3Qtc2VydmljZS50aG91Z2h0YmVuZC5jb20vIiwiaWF0IjoxNjE3ODg3NTA5LCJleHAiOjE2MTc5NzM5MDksImF6cCI6Ikg1dDR6UG5Pa3puTTV6ejJaU1FYSlJaY1UyVldCeVB0Iiwic2NvcGUiOiJyZWFkOmFydGlzdHMiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMiLCJwZXJtaXNzaW9ucyI6WyJyZWFkOmFydGlzdHMiXX0.KhTKy4iYGS00ZMpabVbQEJchX_Raaz2gYPVULMRR9kxnP4UpW8_BkMNmGkGNCKIE6K54qIEO7LOLIvnHo-iHaCY0H3EZBxF3QF4jhLEFVwL3qpM_GBWmZzZAGlD8HTw-24-xubu4i2aZgQMehRGXXXZABw15xSjNN9jcModfSz9LEkyzkrUU_knuEvgtczjz0h7LvpgQj_9w01gBNdI9dF8SJ3swjXFTLjU7-IFBFFO4P_DqzqIhRkSWdtrNkE_Fr6Q5O09PGiuJFYTpfv0yavp_t078yspXbLMlWvoUwKVDzLXmpNqfItRtLkkfwY3q2o5LOz-7nJ9Xir-2ZvAlPw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}/artist/60665229ec8b9972928a08e5",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"artist",
+						"60665229ec8b9972928a08e5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Artists By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVWckw5SEVadXU3MHc1dUx6RDBKUiJ9.eyJpc3MiOiJodHRwczovL3Rob3VnaHRiZW5kLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJINXQ0elBuT2t6bk01enoyWlNRWEpSWmNVMlZXQnlQdEBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9tYy1hcnRpc3Qtc2VydmljZS50aG91Z2h0YmVuZC5jb20vIiwiaWF0IjoxNjE3ODg3NTA5LCJleHAiOjE2MTc5NzM5MDksImF6cCI6Ikg1dDR6UG5Pa3puTTV6ejJaU1FYSlJaY1UyVldCeVB0Iiwic2NvcGUiOiJyZWFkOmFydGlzdHMiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMiLCJwZXJtaXNzaW9ucyI6WyJyZWFkOmFydGlzdHMiXX0.KhTKy4iYGS00ZMpabVbQEJchX_Raaz2gYPVULMRR9kxnP4UpW8_BkMNmGkGNCKIE6K54qIEO7LOLIvnHo-iHaCY0H3EZBxF3QF4jhLEFVwL3qpM_GBWmZzZAGlD8HTw-24-xubu4i2aZgQMehRGXXXZABw15xSjNN9jcModfSz9LEkyzkrUU_knuEvgtczjz0h7LvpgQj_9w01gBNdI9dF8SJ3swjXFTLjU7-IFBFFO4P_DqzqIhRkSWdtrNkE_Fr6Q5O09PGiuJFYTpfv0yavp_t078yspXbLMlWvoUwKVDzLXmpNqfItRtLkkfwY3q2o5LOz-7nJ9Xir-2ZvAlPw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}/artist/60665228ec8b9972928a0871",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"artist",
+						"60665228ec8b9972928a0871"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Artists By Id Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVWckw5SEVadXU3MHc1dUx6RDBKUiJ9.eyJpc3MiOiJodHRwczovL3Rob3VnaHRiZW5kLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJINXQ0elBuT2t6bk01enoyWlNRWEpSWmNVMlZXQnlQdEBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9tYy1hcnRpc3Qtc2VydmljZS50aG91Z2h0YmVuZC5jb20vIiwiaWF0IjoxNjE3ODg3NTA5LCJleHAiOjE2MTc5NzM5MDksImF6cCI6Ikg1dDR6UG5Pa3puTTV6ejJaU1FYSlJaY1UyVldCeVB0Iiwic2NvcGUiOiJyZWFkOmFydGlzdHMiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMiLCJwZXJtaXNzaW9ucyI6WyJyZWFkOmFydGlzdHMiXX0.KhTKy4iYGS00ZMpabVbQEJchX_Raaz2gYPVULMRR9kxnP4UpW8_BkMNmGkGNCKIE6K54qIEO7LOLIvnHo-iHaCY0H3EZBxF3QF4jhLEFVwL3qpM_GBWmZzZAGlD8HTw-24-xubu4i2aZgQMehRGXXXZABw15xSjNN9jcModfSz9LEkyzkrUU_knuEvgtczjz0h7LvpgQj_9w01gBNdI9dF8SJ3swjXFTLjU7-IFBFFO4P_DqzqIhRkSWdtrNkE_Fr6Q5O09PGiuJFYTpfv0yavp_t078yspXbLMlWvoUwKVDzLXmpNqfItRtLkkfwY3q2o5LOz-7nJ9Xir-2ZvAlPw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"60665229ec8b9972928a08e5\",\n    \"name\": \"A Day to Remember 2\"\n}"
+				},
+				"url": {
+					"raw": "http://{{host}}/artist/60665229ec8b9972928a08e5",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"artist",
+						"60665229ec8b9972928a08e5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Artists Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlVWckw5SEVadXU3MHc1dUx6RDBKUiJ9.eyJpc3MiOiJodHRwczovL3Rob3VnaHRiZW5kLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJINXQ0elBuT2t6bk01enoyWlNRWEpSWmNVMlZXQnlQdEBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9tYy1hcnRpc3Qtc2VydmljZS50aG91Z2h0YmVuZC5jb20vIiwiaWF0IjoxNjE2MjgzNTIxLCJleHAiOjE2MTYzNjk5MjEsImF6cCI6Ikg1dDR6UG5Pa3puTTV6ejJaU1FYSlJaY1UyVldCeVB0Iiwic2NvcGUiOiJyZWFkOmFydGlzdHMiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMiLCJwZXJtaXNzaW9ucyI6WyJyZWFkOmFydGlzdHMiXX0.AXPCNsHHuM6BFD77DvRQ3GgWy45yRoOUXHnpZCYF2ToxrnuovYgwFgdmGRTN6vDAhg-sNX8ZTbFSz9lgRnNkds5IgUYdkAIIOEGD6X64lzIznkAOFekZ4Bbx5FerXiPQ8nkIc3RXjbQ1-xIj5naiJ-8yQPeTJ-3-Da0kjo94n1PMx6jdRwvu41WbvlGWLbVqXna6qza2TawYmZGAmDRZUht8BlZ5zFz7TtWoA1K08yLAIePPkm1bsBJiXLGsilX01fIm3dmmece1n8w1Yfu6isB94ATyRqQiZurFiYdydq_9h9mx20TDZ2JhFnkdr8fcEX65J6ShL9D6AdKgZP38KA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 12345,\n    \"name\": \"Soundgardeny\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/artist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"artist"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "192.168.99.100:30001"
+		}
+	]
+}
